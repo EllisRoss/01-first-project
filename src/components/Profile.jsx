@@ -4,7 +4,7 @@ const Profile = () => {
     return (
         <div className='content'>
             <div>
-                <img src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'/>
+                <img src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' alt='tree on beach'/>
             </div>
             <div>
                 Ava + description
