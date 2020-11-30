@@ -6,7 +6,7 @@
   "h h"
   "n c";
 
-  grid-template-rows: 60px 2px;
+  grid-template-rows: 60px 2ft;
   grid-template-columns: 8% 92%;
   grid-gap: 10px;
 }
