@@ -1,0 +1,12 @@
+.nav {
+    grid-area: n;
+    background-color: coral;
+}
+
+.navBarMenu {
+    text-align: center;
+}
+
+.item {
+    color: white;
+}

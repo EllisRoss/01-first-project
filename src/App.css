@@ -6,30 +6,7 @@
   "h h"
   "n c";
 
-  grid-template-rows: 60px 2ft;
-  grid-template-columns: 8% 92%;
+  grid-template-rows: 60px 1ft;
+  grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
-}
-.header {
-  grid-area: h;
-  background-color: coral;
-}
-
-.header img {
-  width: 60px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: coral;
-}
-
-.navBarMenu {
-  text-align: center;
-
-}
-
-.content {
-  grid-area: c;
-  background-color: lightgrey;
 }
