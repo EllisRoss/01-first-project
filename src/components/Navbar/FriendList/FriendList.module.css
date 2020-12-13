@@ -1,0 +1,15 @@
+.friends {
+    color: white;
+    font-size: 17px;
+}
+
+.items {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item img {
+    width: 40px;
+    border-radius: 20px;
+}

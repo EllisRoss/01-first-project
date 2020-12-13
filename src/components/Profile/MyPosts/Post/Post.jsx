@@ -1,17 +1,17 @@
 import React from "react";
-import postStyle from './Post.module.css';
+import style from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div>
-            <div className={postStyle.item}>
-                <div className={postStyle.avatar}>
+            <div className={style.item}>
+                <div className={style.avatar}>
                     <img src='https://i1.wp.com/sova.ponominalu.ru/wp-content/uploads/2019/08/ava-max.jpg?fit=2000%2C1333&ssl=1' />
                 </div>
-                post 1
+                {props.message}
                 <div>
-                    <span>Like </span>
-                    <span>Dislike </span>
+                    <span className={style.itemLike}>{props.likeCount} like </span>
+                    <span className={style.itemDislike}>{props.dislikeCount} dislike </span>
                 </div>
             </div>
         </div>

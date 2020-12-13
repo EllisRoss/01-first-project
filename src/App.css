@@ -1,12 +1,18 @@
 .app-wrapper {
-  display: grid;
-  width: 1200px;
-  margin: 0 auto;
-  grid-template-areas:
-  "h h"
-  "n c";
+    display: grid;
+    width: 1200px;
+    margin: 0 auto;
+    grid-template-areas:
+    "h h"
+    "n c";
 
-  grid-template-rows: 60px 1ft;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 190px 1fr;
+    grid-gap: 10px;
+    font-family: Arial;
+}
+
+.app-wrapper-content {
+    grid-area: c;
+    background-color: lightgray;
 }
