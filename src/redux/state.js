@@ -1,3 +1,5 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const _ava = 'https://steamuserimages-a.akamaihd.net/ugc/250339495850728821/5F2735053134AC2FE8429D935FC70E7D7037F2C8/';
 
 let store = {
@@ -39,16 +41,11 @@ let store = {
             ],
         },
     },
-
     _callSubscriber() {
         console.log('State was changed')
     },
-
-    getState() {
-        return this._state;
-    },
-
-    addPost() {
+    //  Post control methods
+    _addPost() {
         let newPost = {
             id: 5,
             message: this._state.profilePage.newPostText,
@@ -59,16 +56,31 @@ let store = {
         this._state.profilePage.newPostText = '';
         this._callSubscriber(this._state);
     },
-
-    updateNewPostText(newText){
+    _updateNewPostText(newText){
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },
+    // End (post control methods)
 
+    getState() {
+        return this._state;
+    },
     subscribe(observer){
         this._callSubscriber = observer;
     },
+
+    dispatch(action){   //  { type: 'ADD-POST' }
+        debugger;
+        if (action.type === 'ADD-POST') {
+            this._addPost();
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._updateNewPostText(action.newText);
+        }
+    },
 }
+
+export const addPostActionCreator = () => ({  type: ADD_POST  });
+export const updateNewPostTextActionCreator = (text) => ({  type: UPDATE_NEW_POST_TEXT, newText: text  });
 
 window.store = store;
 export default store;
