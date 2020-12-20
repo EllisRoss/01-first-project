@@ -8,6 +8,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
     return (
@@ -23,7 +24,9 @@ const App = (props) => {
                     } />
 
                     <Route path='/dialogs' render={ () =>
-                        <Dialogs state={props.state.dialogsPage}/>
+                        <DialogsContainer state={props.state.dialogsPage}
+                                          dispatch={props.dispatch}
+                        />
                     } />
 
                     <Route path='/news' render={ () => <News /> } />

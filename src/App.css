@@ -15,4 +15,5 @@
 .app-wrapper-content {
     grid-area: c;
     background-color: lightgray;
+    /*padding: 10px;*/
 }
