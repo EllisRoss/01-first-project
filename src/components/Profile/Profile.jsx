@@ -7,9 +7,7 @@ const Profile = (props) => {
     return (
         <div>
             <ProfileInfo />
-            <MyPostsContainer posts={props.state.posts}
-                              newPostText={props.state.newPostText}
-                              dispatch={props.dispatch} />
+            <MyPostsContainer />
         </div>
     );
 };
