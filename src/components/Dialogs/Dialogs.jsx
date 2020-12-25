@@ -4,20 +4,22 @@ import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-    debugger;
     // return array of dialogs
-    let dialogsElements = props.state.dialogs.map (
+    let dialogsElements = props.dialogsPage.dialogs.map (
         dialog => <DialogItem avatar={dialog.avatar}
                               name={dialog.name}
                               id={dialog.id}
+                              key={dialog.id}
         />
     );
     // return array of messages
-    let messagesElements = props.state.messages.map (
-        message => <Message message={message.message}/>
+    let messagesElements = props.dialogsPage.messages.map (
+        message => <Message message={message.message}
+                            key={message.id}
+        />
     );
 
-    let newMessageBody = props.state.newMessageBody;
+    let newMessageBody = props.dialogsPage.newMessageBody;
 
     let onSendMessageClick = () => {
         props.sendMessage();

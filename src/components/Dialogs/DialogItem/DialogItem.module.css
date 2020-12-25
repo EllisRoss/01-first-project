@@ -1,5 +1,15 @@
 .dialog_items {
-    padding: 10px;
+}
+
+.dialog_item {
+    display: grid;
+    grid-template-colums: 20px 1fr;
+    grid-template-areas: "i n";
+    background-color: white;
+    border-radius: 20px;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 40px;
 }
 
 .dialog_items .active {
@@ -11,6 +21,14 @@
     text-decoration: none;
 }
 
-.dialog_items img {
-   border-radius: 20px;
+.itemImage {
+    grid-area: i;
+}
+.itemImage img{
+    border-radius: 20px;
+}
+
+.itemName {
+    grid-area: n;
+    margin: auto 0px;
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
-import FriendList from "./FriendList/FriendList";
+import FriendListContainer from "./FriendList/FriendListContainer";
 
-const Navbar = (props) => {
+const Navbar = () => {
     return (
         <nav className={styles.nav}>
             <div className={styles.navBarMenu}>
@@ -27,13 +27,20 @@ const Navbar = (props) => {
                 <br/>
 
                 <div className={styles.item}>
+                    <NavLink to='/users' activeClassName={styles.active}>
+                        Find Users</NavLink>
+                </div>
+
+                <br/>
+
+                <div className={styles.item}>
                     <NavLink to='/settings' activeClassName={styles.active}>
                         Settings</NavLink>
                 </div>
 
                 <br/>
 
-                {/*<FriendList state={props.state}/>*/}
+                <FriendListContainer/>
             </div>
         </nav>
     );
