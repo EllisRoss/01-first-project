@@ -1,69 +1,80 @@
 import React from 'react';
 import styles from './Users.module.css';
-
-const _ava = 'https://steamuserimages-a.akamaihd.net/ugc/250339495850728821/5F2735053134AC2FE8429D935FC70E7D7037F2C8/';
+import axios from "axios";
+import defaultAva from '../../assets/images/defaultAva.png'
 
 let Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-                {
-                    id: 1,
-                    photoUrl: _ava,
-                    followed: true,
-                    userName: 'Nastya',
-                    status: 'Kitty',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 2,
-                    photoUrl: _ava,
-                    followed: false,
-                    userName: 'Tony',
-                    status: 'Lazanya',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 3,
-                    photoUrl: _ava,
-                    followed: false,
-                    userName: 'Mark',
-                    status: 'gg wp',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 4,
-                    photoUrl: _ava,
-                    followed: false,
-                    userName: 'Alfred',
-                    status: ';)',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 5,
-                    photoUrl: _ava,
-                    followed: false,
-                    userName: 'James',
-                    status: 'i like football',
-                    location: {city: 'Moscow', country: 'Russia'}
-                },
-                {
-                    id: 6,
-                    photoUrl: _ava,
-                    followed: false,
-                    userName: 'Nastya',
-                    status: 'I am a boss',
-                    location: {city: 'Minsk', country: 'Belarus'}
-                },
-            ]
-        )
+
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios.get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items);
+                });
+
+            // props.setUsers([
+            //         {
+            //             id: 1,
+            //             photoUrl: defaultAva,
+            //             followed: true,
+            //             userName: 'Nastya',
+            //             status: 'Kitty',
+            //             location: {city: 'Moscow', country: 'Russia'}
+            //         },
+            //         {
+            //             id: 2,
+            //             photoUrl: defaultAva,
+            //             followed: false,
+            //             userName: 'Tony',
+            //             status: 'Lazanya',
+            //             location: {city: 'Moscow', country: 'Russia'}
+            //         },
+            //         {
+            //             id: 3,
+            //             photoUrl: defaultAva,
+            //             followed: false,
+            //             userName: 'Mark',
+            //             status: 'gg wp',
+            //             location: {city: 'Moscow', country: 'Russia'}
+            //         },
+            //         {
+            //             id: 4,
+            //             photoUrl: defaultAva,
+            //             followed: false,
+            //             userName: 'Alfred',
+            //             status: ';)',
+            //             location: {city: 'Moscow', country: 'Russia'}
+            //         },
+            //         {
+            //             id: 5,
+            //             photoUrl: defaultAva,
+            //             followed: false,
+            //             userName: 'James',
+            //             status: 'i like football',
+            //             location: {city: 'Moscow', country: 'Russia'}
+            //         },
+            //         {
+            //             id: 6,
+            //             photoUrl: defaultAva,
+            //             followed: false,
+            //             userName: 'Nastya',
+            //             status: 'I am a boss',
+            //             location: {city: 'Minsk', country: 'Belarus'}
+            //         },
+            //     ]
+            // )
+        }
     }
 
-    return <div>
-        {
-            props.users.map(u => <div key={u.id}>
+    return (
+        <div>
+            <button onClick={getUsers}>Get Users</button>
+            {
+                props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photoUrl} className={styles.userPhoto}/>
+                        <img src={u.photos.small != null ? u.photos.small : defaultAva}
+                             className={styles.userPhoto}/>
                     </div>
                     <div>
                         {u.followed
@@ -76,19 +87,20 @@ let Users = (props) => {
 
                     </div>
                 </span>
-                <span>
                     <span>
-                        <div>{u.userName}</div>
+                    <span>
+                        <div>{u.name}</div>
                         <div>{u.status}</div>
                     </span>
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        {/*<div>{u.location.country}</div>*/}
+                        {/*<div>{u.location.city}</div>*/}
                     </span>
                 </span>
-            </div>)
-        }
-    </div>
-}
+                </div>)
+            }
+        </div>
+    );
+};
 
 export default Users;
