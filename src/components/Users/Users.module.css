@@ -3,3 +3,21 @@
     height: 50px;
     border-radius: 30px;
 }
+
+.selectedPage {
+    color: coral;
+}
+
+.userItem {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: black;
+}
+
+.userInfo {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
