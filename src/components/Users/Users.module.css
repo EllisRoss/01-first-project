@@ -8,16 +8,31 @@
     color: coral;
 }
 
+.pageNumbers {
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+
 .userItem {
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
     border-style: groove;
     border-color: black;
+    width: 944px;
+}
+
+.userItem a {
+    text-decoration: none;
+    color: black;
 }
 
 .userInfo {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr 1fr;
     grid-auto-rows: 1fr;
+}
+
+.followButton {
+    margin-left: 900px;
 }

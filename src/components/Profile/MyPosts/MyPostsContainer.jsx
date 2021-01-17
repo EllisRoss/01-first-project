@@ -32,7 +32,7 @@ let mapStateToProps = (state) => {
     return {
         profilePage: state.profilePage,
     };
-}; // Название менять не рекомендуется
+}; // Название менять нельзя
 
 let mapDispatchToProps = (dispatch) => {
     return {
@@ -43,7 +43,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(updateNewPostTextActionCreator(text));
         },
     }
-}; // Название менять не рекомендуется
+}; // Название менять нельзя
 
 const MyPostsContainer = connect(mapStateToProps,
     mapDispatchToProps)(MyPosts);
