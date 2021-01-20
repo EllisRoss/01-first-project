@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {
-    followAC, followThunkCreator, getUsersThunkCreator,
+    followThunkCreator, getUsersThunkCreator,
     toggleIsFollowingProgressAC,
-    unfollowAC, unfollowThunkCreator
+    unfollowThunkCreator
 } from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";

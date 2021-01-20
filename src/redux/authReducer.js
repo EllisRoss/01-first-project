@@ -1,3 +1,5 @@
+import {authAPI} from "../api/api";
+
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA';
 
 let initialState = {
@@ -5,7 +7,6 @@ let initialState = {
     email: null,
     login: null,
     isAuth: false,
-    //isFetching: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -17,13 +18,6 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-// const toggleIsFetching = (state, fetchingVal) => {
-//     return {
-//         ...state,
-//         isFetching: fetchingVal,
-//     }
-// };
-
 const setAuthUserData = (state, action) => {
     return {
         ...state,
@@ -31,6 +25,15 @@ const setAuthUserData = (state, action) => {
         isAuth: true,
     };
 };
+
+export const getAuthUserDataThunkCreator = () => (dispatch) => {
+    authAPI.authMe().then(responce => {
+        if (responce.resultCode === 0) {
+            let {id, email, login} = responce.data;
+            dispatch(setAuthUserDataAC(id, email, login));
+        }
+    });
+}
 
 export const setAuthUserDataAC = (userId, email, login) => ({ type: SET_AUTH_USER_DATA, data: {userId, email, login} });
 

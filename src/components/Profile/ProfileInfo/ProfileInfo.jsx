@@ -4,7 +4,7 @@ import Preloader from "../../common/Preloader/Preloader";
 import defaultAvatar from "../../../assets/images/defaultAva.png"
 
 const ProfileInfo = (props) => {
-
+    debugger;
     if (!props.profile) {
         return (<Preloader/>);
     }

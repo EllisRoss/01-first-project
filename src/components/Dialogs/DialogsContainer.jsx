@@ -30,8 +30,9 @@ import {connect} from "react-redux";
 let mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth,
     }
-}; // Название менять не рекомендуется
+}; // Название менять нельзя
 
 let mapDispatchToProps = (dispatch) => {
     return {
@@ -42,7 +43,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(sendMessageCreator());
         },
     }
-}; // Название менять не рекомендуется
+}; // Название менять нельзя
 
 const DialogsContainer = connect(mapStateToProps,
     mapDispatchToProps)(Dialogs);
