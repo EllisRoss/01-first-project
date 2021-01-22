@@ -32,9 +32,15 @@ export const authAPI = {
 }
 
 export const profileAPI = {
-    setUserProfile(userId) {
+    getUserProfile(userId) {
         return instance.get(`profile/${userId}`)
             .then(response => response.data);
-    }
+    },
+    getUserStatus(userId) {
+        return instance.get(`profile/status/${userId}`)
+    },
+    updateUserStatus(status) {
+        return instance.put(`profile/status`, {status: status})
+    },
 }
 
