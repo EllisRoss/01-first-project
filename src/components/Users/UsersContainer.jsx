@@ -7,6 +7,8 @@ import {
 } from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
+import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
+import {compose} from "redux";
 
 // let Users = (props) => {
 //
@@ -174,4 +176,7 @@ let mapDispatchToProps = {
     follow: followThunkCreator,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    WithAuthRedirect,
+)(UsersContainer);

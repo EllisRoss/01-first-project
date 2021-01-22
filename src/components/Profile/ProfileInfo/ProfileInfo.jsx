@@ -2,9 +2,9 @@ import React from "react";
 import styles from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import defaultAvatar from "../../../assets/images/defaultAva.png"
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
-    debugger;
     if (!props.profile) {
         return (<Preloader/>);
     }
@@ -17,6 +17,7 @@ const ProfileInfo = (props) => {
                     }
                 </div>
                 <div className={styles.userDescription}>
+                    <ProfileStatus status={"Hello"} />
                     <div>{props.profile.fullName}</div>
                     <br/>
                     <div>About me:</div>
