@@ -3,17 +3,21 @@ import React from "react";
 class ProfileStatus extends React.Component {
     state = {
         editMode: false,
-        status: this.props.userStatus
+        userStatus: this.props.userStatus
     }
 
-    // _updateUserStatus(text) {
-    //     this.state.statusText = text;
-    // }
-    //
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.userStatus !== this.props.userStatus) {
+            this.setState({
+                userStatus: this.props.userStatus,
+            })
+        }
+    }
+
     onStatusChange = (event) => {
         let text = event.currentTarget.value;
         this.setState({
-            status: text,
+            userStatus: text,
         });
     }
 
@@ -27,7 +31,7 @@ class ProfileStatus extends React.Component {
         this.setState({
             editMode: false,
         });
-        this.props.updateUserStatus(this.state.status);
+        this.props.updateUserStatus(this.state.userStatus);
     }
 
 
@@ -42,7 +46,7 @@ class ProfileStatus extends React.Component {
                     : <div>
                         <input autoFocus={true}
                                onBlur={this.deactivateEditMode}
-                               value={this.state.status}
+                               value={this.state.userStatus}
                                onChange={this.onStatusChange}/>
                     </div>
                 }

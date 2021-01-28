@@ -34,15 +34,8 @@ let mapStateToProps = (state) => {
     };
 }; // Название менять нельзя
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addPost: () => {
-            dispatch(addPostActionCreator());
-        },
-        updateNewPostText: (text) => {
-            dispatch(updateNewPostTextActionCreator(text));
-        },
-    }
+let mapDispatchToProps = {
+    addPost: addPostActionCreator,
 }; // Название менять нельзя
 
 const MyPostsContainer = connect(mapStateToProps,
