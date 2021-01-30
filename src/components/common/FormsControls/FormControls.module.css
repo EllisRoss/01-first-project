@@ -10,3 +10,9 @@
 .form_control.error label {
     color: red;
 }
+
+.form_summary_error {
+    /*border: solid red 1px;*/
+    padding: 5px;
+    color: red;
+}

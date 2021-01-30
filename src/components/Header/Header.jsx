@@ -10,8 +10,8 @@ const Header = (props) => {
             alt='firefox logo'/>
             <div className={styles.loginBlock}>
                 {props.isAuth
-                    ? props.login
-                    : <NavLink to={'/login'}>Login</NavLink>}
+                    ? <div> {props.login}  <button onClick={props.logout}>Log out</button></div>
+                    : <NavLink to={'/login'}>Log In</NavLink>}
             </div>
         </header>
     );
