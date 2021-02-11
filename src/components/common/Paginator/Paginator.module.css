@@ -1,0 +1,8 @@
+.selectedPage {
+    color: coral;
+}
+
+.pageNumbers {
+    text-decoration: none;
+    margin-bottom: 50px;
+}

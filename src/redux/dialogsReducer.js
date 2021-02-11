@@ -1,4 +1,4 @@
-const SEND_MESSAGE = 'SEND_MESSAGE'
+const SEND_MESSAGE = 'social-network/dialogs/SEND_MESSAGE'
 
 const _ava = 'https://steamuserimages-a.akamaihd.net/ugc/250339495850728821/5F2735053134AC2FE8429D935FC70E7D7037F2C8/';
 

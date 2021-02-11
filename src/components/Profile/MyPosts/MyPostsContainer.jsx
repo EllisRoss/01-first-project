@@ -30,7 +30,7 @@ import {addPostActionCreator} from "../../../redux/profileReducer";
 
 let mapStateToProps = (state) => {
     return {
-        profilePage: state.profilePage,
+        posts: state.profilePage.posts,
     };
 }; // Название менять нельзя
 
