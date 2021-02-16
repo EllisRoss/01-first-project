@@ -1,5 +1,5 @@
 import React from "react";
-import {Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
@@ -10,9 +10,10 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {setInitializedThunkCreator} from "./redux/appReducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import store from "./redux/reduxStore";
 
 class App extends React.Component {
 
@@ -50,4 +51,18 @@ let mapDispatchToProps = {
     initialize: setInitializedThunkCreator,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+const AppContainer =  connect(mapStateToProps, mapDispatchToProps)(App);
+
+const SocialNetworkApp = (props) => {
+    return (
+        <React.StrictMode>
+            <BrowserRouter>
+                <Provider store={store}>
+                    <AppContainer />
+                </Provider>
+            </BrowserRouter>
+        </React.StrictMode>
+    );
+}
+
+export default SocialNetworkApp;
