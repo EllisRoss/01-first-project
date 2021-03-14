@@ -1,47 +1,46 @@
-import React from "react";
-import styles from './ProfileInfo.module.css';
+import React, {useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
-import defaultAvatar from "../../../assets/images/defaultAva.png"
-import ProfileStatus from "./ProfileStatus";
+import ProfileDataForm from "./ProfileData/ProfileDataForm";
+import ProfileData from "./ProfileData/ProfileData";
 
 const ProfileInfo = (props) => {
+
+    let [editMode, setEditMode] = useState(false);
+
+    const activateEditMode = () => {
+        setEditMode(true);
+    }
+
+    const deactivateEditMode = () => {
+        setEditMode(false);
+    }
+
     if (!props.profile) {
         return (<Preloader/>);
     }
+
+    let onSelectMainPhoto = (event) => {
+        let file = event.target.files[0];
+        console.log(file);
+        let newUserAvatar = new FormData();
+        newUserAvatar.append('userAvatar', file);
+        props.setUserAvatar(newUserAvatar);
+    }
+
+
     return (
         <div>
-            <div className={styles.descriptionBlock}>
-                <div className={styles.userAvatar}>
-                    {
-                        props.profile.photos.large ? <img src={props.profile.photos.large} /> : <img src={defaultAvatar} />
-                    }
-                </div>
-                <div className={styles.userDescription}>
-                    <div><h3>{props.profile.fullName}</h3></div>
-                    <ProfileStatus userStatus={props.userStatus}
-                                   updateUserStatus={props.updateUserStatus}/>
-                    <br/>
-                    <div>About me:</div>
-                    <div>{props.profile.aboutMe}</div>
-                    <br/>
-                    <div>Job:</div>
-                    <div>{props.profile.lookingForAJobDescription}</div>
-                    <br/>
-                    <div>Contacts:</div>
-                    <div>{props.profile.contacts.facebook}</div>
-                    <div>{props.profile.contacts.github}</div>
-                    <div>{props.profile.contacts.instagram}</div>
-                    <div>{props.profile.contacts.mainLink}</div>
-                    <div>{props.profile.contacts.twitter}</div>
-                    <div>{props.profile.contacts.vk}</div>
-                    <div>{props.profile.contacts.website}</div>
-                    <div>{props.profile.contacts.youtube}</div>
-                    <br/>
-                </div>
-            </div>
+            {
+                editMode ? <ProfileDataForm deactivateEditMode={deactivateEditMode}
+                                            {...props}/>
+                                         : <ProfileData activateEditMode={activateEditMode}
+                                                        onSelectMainPhoto={onSelectMainPhoto}
+                                                        {...props}/>
+            }
         </div>
     );
 
 }
+
 
 export default ProfileInfo;

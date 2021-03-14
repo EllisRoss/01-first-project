@@ -1,7 +1,6 @@
 import React from "react";
 import {create} from 'react-test-renderer';
 import ProfileStatus from "./ProfileStatus";
-// import {act} from "@testing-library/react";
 import TestRenderer from 'react-test-renderer';
 
 describe('ProfileStatus component', () => {

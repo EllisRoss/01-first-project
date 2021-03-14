@@ -16,3 +16,7 @@
     padding: 5px;
     color: red;
 }
+
+.captcha {
+    width: 176px;
+}

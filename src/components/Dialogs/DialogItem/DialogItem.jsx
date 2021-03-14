@@ -12,7 +12,7 @@ const DialogItem = (props) => {
                 <div className={styles.dialog_item}>
                     <div className={styles.itemImage}>
                         <div>
-                            <img src={props.avatar}/>
+                            <img src={props.avatar} alt='user avatar'/>
                         </div>
                     </div>
                     <div className={styles.itemName}>

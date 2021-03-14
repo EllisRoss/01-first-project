@@ -1,7 +1,8 @@
-.logo {
-    height: 200px;
-    width: 1000px;
+.userName {
+    font-size: 20pt;
+    /*background-color: crimson;*/
 }
+
 
 .descriptionBlock {
     display: grid;
@@ -21,4 +22,8 @@
 
 .userDescription {
     grid-area: desc;
+}
+
+.contacts {
+    padding-left: 10px;
 }

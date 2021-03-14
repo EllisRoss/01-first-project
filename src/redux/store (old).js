@@ -4,7 +4,7 @@ import sidebarReducer from "./sidebarReducer";
 
 const _ava = 'https://steamuserimages-a.akamaihd.net/ugc/250339495850728821/5F2735053134AC2FE8429D935FC70E7D7037F2C8/';
 
-let store = {
+let storeOld = {
     _state: {
         profilePage: {
             posts: [

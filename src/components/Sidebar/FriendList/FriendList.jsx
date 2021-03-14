@@ -4,7 +4,7 @@ import styles from './FriendList.module.css';
 const FriendList = (props) => {
     let getFriendList = props.sidebar.friends.map(
         friend => <div key={friend.id} className={styles.item}>
-            <img src={friend.avatar}/>
+            <img src={friend.avatar} alt='user avatar'/>
             <div>{friend.name}</div>
         </div>
     );

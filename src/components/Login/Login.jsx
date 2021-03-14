@@ -11,6 +11,7 @@ const maxLength30 = maxLengthCreator(30);
 
 
 const LoginForm = (props) => {
+
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
@@ -27,11 +28,21 @@ const LoginForm = (props) => {
                        type={'password'}/>
             </div>
             <div>
-                <Field name={'rememberMe'}
-                       component={'input'}
-                       type={'checkbox'}/>
+                <Field name='rememberMe'
+                       component='input'
+                       type='checkbox'/>
                 <label>remember me</label>
             </div>
+            {
+                props.captchaUrl && <div>
+                    <div>
+                        <img className={styles.captcha} src={props.captchaUrl} alt="captcha"/>
+                    </div>
+                    <Field name='captcha'
+                           component={Input}
+                           validate={[requiredField]}/>
+                </div>
+            }
             <div className={styles.form_summary_error}>
                 {props.error}
             </div>
@@ -46,8 +57,8 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        let {email, password, rememberMe} = formData;
-        props.login(email, password, rememberMe);
+        let {email, password, rememberMe, captcha} = formData;
+        props.login(email, password, rememberMe, captcha);
     }
 
     if (props.isAuth) {
@@ -57,7 +68,7 @@ const Login = (props) => {
     return (
         <div>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
         </div>
     );
 }
@@ -70,6 +81,7 @@ let mapDispatchToProps = {
 let mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
+        captchaUrl: state.auth.captchaUrl,
     }
 }
 

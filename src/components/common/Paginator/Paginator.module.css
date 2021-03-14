@@ -2,7 +2,16 @@
     color: coral;
 }
 
-.pageNumbers {
+.paginator {
+
+    display: flex;
+    justify-content: center;
+
     text-decoration: none;
     margin-bottom: 50px;
+}
+
+.pageNumber {
+    margin-left: 5px;
+    margin-right: 5px;
 }
