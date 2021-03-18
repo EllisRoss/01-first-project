@@ -4,9 +4,15 @@
 }
 
 .items {
-    margin: 10px;
+    grid-gap: 5px;
+    font-size: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.items a {
+    text-decoration: none;
+    color: white;
 }
 
 .item img {

@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="53eebd4f-72c3-4e8c-9bc8-9e9e8c6d806b" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hoc/withSuspence.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/authAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/profileAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/securityAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/usersAPI.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/AddPostForm/AddNewPostForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/FriendList/Friend.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendListContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Users/ToggleFollow/ToggleFollow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersSearchForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/usersReducer.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/usersReducerThunks.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ResultCodeEnums.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/ProfileSettings/ProfileSettings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/ProfileSettings/ProfileSettings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/ProfileSettings/ProfileSettingsForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/ProfileSettings/ProfileSettingsForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/FriendList/FriendListContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Preloader/Preloader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/WithAuthRedirect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/WithAuthRedirect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/withSuspence.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withSuspence.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/appReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/appReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reduxStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reduxStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/settingsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/settingsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebarReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/usersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/usersReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/usersSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/usersSelectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/APIResponceTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/objectHelpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/objectHelpers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +105,87 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rwos 2.0" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\projects\01-first-project\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RecentsManager">
+    <key name="es6.move.members.recent.items">
+      <recent name="D:\projects\01-first-project\src\components\Users\UsersSearchForm.tsx" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\01-first-project\src\redux" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="follow thunk success" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/usersReducerThunks.test.ts" />
+      <test-names>
+        <test-name value="follow thunk success" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="unfollow thunk success" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/usersReducerThunks.test.ts" />
+      <test-names>
+        <test-name value="unfollow thunk success" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="test" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.follow thunk success" />
+      <item itemvalue="Jest.unfollow thunk success" />
+      <item itemvalue="npm.start" />
+      <item itemvalue="npm.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.unfollow thunk success" />
+        <item itemvalue="Jest.follow thunk success" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="53eebd4f-72c3-4e8c-9bc8-9e9e8c6d806b" name="Default Changelist" comment="" />
@@ -51,6 +195,19 @@
       <updated>1606765022466</updated>
       <workItem from="1606765025245" duration="2732000" />
       <workItem from="1613816508418" duration="61000" />
+      <workItem from="1617720282181" duration="4273000" />
+      <workItem from="1617798660071" duration="6002000" />
+      <workItem from="1617882859660" duration="2539000" />
+      <workItem from="1617976891533" duration="1060000" />
+      <workItem from="1618134852778" duration="4219000" />
+      <workItem from="1618148450594" duration="2519000" />
+      <workItem from="1618320405413" duration="2298000" />
+      <workItem from="1618322745909" duration="1485000" />
+      <workItem from="1618324241340" duration="2518000" />
+      <workItem from="1618329067508" duration="2707000" />
+      <workItem from="1618489318114" duration="3208000" />
+      <workItem from="1618587079029" duration="6242000" />
+      <workItem from="1618746498020" duration="5858000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1606765354022</created>
@@ -84,7 +241,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -101,5 +258,99 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1944" y="362" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618329408061">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1944" y="362" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1618329408061" />
+    <state x="2310" y="800" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618750712372">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2310" y="800" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1618750712372" />
+    <state width="502" height="466" key="DebuggerActiveHint" timestamp="1618324086290">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="502" height="466" key="DebuggerActiveHint/0.0.3440.1400@0.0.3440.1400" timestamp="1618324086290" />
+    <state x="1813" y="100" width="1534" height="1207" key="DiffContextDialog" timestamp="1617803239730">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1813" y="100" width="1534" height="1207" key="DiffContextDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1617803239730" />
+    <state x="2360" y="455" key="FileChooserDialogImpl" timestamp="1618325688997">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2360" y="455" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1618325688997" />
+    <state width="1696" height="2" key="GridCell.Tab.0.bottom" timestamp="1618752306888">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="579" key="GridCell.Tab.0.bottom/0.0.3440.1400/-3840.-363.1280.680@0.0.3440.1400" timestamp="1618329169671" />
+    <state width="1696" height="2" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1618752306888" />
+    <state width="1696" height="2" key="GridCell.Tab.0.center" timestamp="1618752306888">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="579" key="GridCell.Tab.0.center/0.0.3440.1400/-3840.-363.1280.680@0.0.3440.1400" timestamp="1618329169671" />
+    <state width="1696" height="2" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1618752306888" />
+    <state width="1696" height="2" key="GridCell.Tab.0.left" timestamp="1618752306888">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="579" key="GridCell.Tab.0.left/0.0.3440.1400/-3840.-363.1280.680@0.0.3440.1400" timestamp="1618329169671" />
+    <state width="1696" height="2" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1618752306888" />
+    <state width="1696" height="2" key="GridCell.Tab.0.right" timestamp="1618752306888">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="579" key="GridCell.Tab.0.right/0.0.3440.1400/-3840.-363.1280.680@0.0.3440.1400" timestamp="1618329169671" />
+    <state width="1696" height="2" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1618752306888" />
+    <state width="1696" height="545" key="GridCell.Tab.1.bottom" timestamp="1618324231394">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.1.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231394" />
+    <state width="1696" height="545" key="GridCell.Tab.1.center" timestamp="1618324231394">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.1.center/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231394" />
+    <state width="1696" height="545" key="GridCell.Tab.1.left" timestamp="1618324231394">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.1.left/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231394" />
+    <state width="1696" height="545" key="GridCell.Tab.1.right" timestamp="1618324231394">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.1.right/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231394" />
+    <state width="1696" height="545" key="GridCell.Tab.2.bottom" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.2.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.2.center" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.2.center/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.2.left" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.2.left/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.2.right" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.2.right/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.3.bottom" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.3.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.3.center" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.3.center/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.3.left" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.3.left/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state width="1696" height="545" key="GridCell.Tab.3.right" timestamp="1618324231395">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="545" key="GridCell.Tab.3.right/0.0.3440.1400@0.0.3440.1400" timestamp="1618324231395" />
+    <state x="2243" y="721" width="672" height="678" key="search.everywhere.popup" timestamp="1617802679338">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2243" y="721" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1617802679338" />
   </component>
 </project>

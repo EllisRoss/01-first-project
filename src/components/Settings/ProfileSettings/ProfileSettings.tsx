@@ -1,7 +1,15 @@
 import React from 'react';
 import ProfileSettingsForm from "./ProfileSettingsForm";
+import {ProfileType} from "../../../types/types";
+import {SaveProfileForm} from "../../../api/profileAPI";
 
-const ProfileSettings = (props) => {
+type ProfileSettingsProps = {
+    profile: ProfileType | null;
+    profileErrors: Array<string>;
+    saveProfile: (formData: SaveProfileForm) => void;
+}
+
+const ProfileSettings: React.FC<ProfileSettingsProps> = (props) => {
 
     return (
         <div>

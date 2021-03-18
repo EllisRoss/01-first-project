@@ -3,7 +3,6 @@ import React, {ChangeEvent, useEffect, useState} from "react";
 type PropsType = {
     userStatus: string
     isOwner: boolean
-
     updateUserStatus: (newStatus: string) => void
 }
 

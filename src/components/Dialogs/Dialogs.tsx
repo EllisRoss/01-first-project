@@ -2,13 +2,18 @@ import React from 'react';
 import styles from './Dialog.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Field, reduxForm} from "redux-form";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {TextArea} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, requiredField} from "../../utils/validators/validators";
+import {DialogType, MessageType} from "../../redux/dialogsReducer";
 
 const maxLength100 = maxLengthCreator(100);
 
-const AddMessageForm = (props) => {
+// type NewMessageFormValuesKeysType = Extract<keyof formDataType, string>;
+
+type AddMessageFormOwnPropsType = {}
+
+const AddMessageForm: React.FC<InjectedFormProps<NewMessageFormValues, AddMessageFormOwnPropsType> & AddMessageFormOwnPropsType> = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
@@ -24,9 +29,20 @@ const AddMessageForm = (props) => {
     );
 }
 
-const AddMessageReduxForm = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm)
+const AddMessageReduxForm = reduxForm<NewMessageFormValues, AddMessageFormOwnPropsType>({form: 'dialogAddMessageForm'})(AddMessageForm)
 
-const Dialogs = (props) => {
+type PropsType = {
+    dialogsPage: {
+        dialogs: Array<DialogType>,
+        messages: Array<MessageType>,
+    }
+    sendMessage: (messageText: string) => void
+}
+type NewMessageFormValues = {
+    newMessageBody: string
+}
+
+const Dialogs: React.FC<PropsType> = (props) => {
     // return array of dialogs
     let dialogsElements = props.dialogsPage.dialogs.map(
         dialog => <DialogItem avatar={dialog.avatar}
@@ -41,9 +57,8 @@ const Dialogs = (props) => {
                             key={message.id}
         />
     );
-
-    let sendMessage = (formData) => {
-        console.log(formData);
+    let sendMessage = (formData: NewMessageFormValues) => {
+        // console.log(formData);
         props.sendMessage(formData.newMessageBody);
     }
     return (

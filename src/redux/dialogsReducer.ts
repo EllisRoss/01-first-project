@@ -1,4 +1,5 @@
 import defaultAva from './../assets/images/defaultAva.png'
+import {InferActionTypes} from "./reduxStore";
 
 const SEND_MESSAGE = 'social-network/dialogs/SEND_MESSAGE'
 
@@ -33,7 +34,7 @@ let initialState = {
 };
 
 type InitialStateType = typeof initialState;
-type ActionType = SendMessageActionType;
+type ActionType = InferActionTypes<typeof DialogsActions>;
 
 const dialogsReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
@@ -60,6 +61,8 @@ type SendMessageActionType = {
     newMessageBody: string
 }
 
-export const sendMessageAC = (newMessageBody: string): SendMessageActionType => ({type: SEND_MESSAGE, newMessageBody});
+export const DialogsActions = {
+    sendMessage: (newMessageBody: string) => ({type: SEND_MESSAGE, newMessageBody} as const),
+}
 
 export default dialogsReducer;

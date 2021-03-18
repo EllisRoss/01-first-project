@@ -5,19 +5,48 @@ import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 import Preloader from "../common/Preloader/Preloader";
+import {ProfileType} from "../../types/types";
+import { SaveProfileForm } from "../../api/profileAPI";
+import {AppStateType} from "../../redux/reduxStore";
 
 const GENERAL_SETTINGS = 'GENERAL_SETTINGS';
 const PROFILE_SETTINGS = 'PROFILE_SETTINGS';
 
-const Settings = (props) => {
+type MapStateProps = {
+    profile: ProfileType | null;
+    authorizedUserId: number | null;
+    profileErrors: Array<string>;
+}
+
+type MapDispatchProps = {
+    saveProfile: (formData: SaveProfileForm) => void;
+    getUserProfile: (userId: number) => void;
+}
+
+const Settings: React.FC<MapStateProps & MapDispatchProps> = (props) => {
+
+    // useEffect(() => {
+    //     if (props.profile.userId !== props.authorizedUserId) {
+    //         props.getUserProfile(props.authorizedUserId);
+    //     }
+    // }, []);
+    //
+    // let userId = props.profile.userId;
+    // if (userId !== props.authorizedUserId) {
+    //     userId = null;
+    // }
 
     useEffect(() => {
-        props.getUserProfile(props.authorizedUserId);
-    }, [props.authorizedUserId]);
+        if (props.authorizedUserId) {
+            if (props.profile?.userId !== props.authorizedUserId) {
+                props.getUserProfile(props.authorizedUserId);
+            }
+        }
+    }, [props.profile]);
 
-    let [settingsMode, setSettingsMode] = useState(null);
+    let [settingsMode, setSettingsMode] = useState('');
 
-    let toggleSettings = (mode) => {
+    let toggleSettings = (mode: string) => {
         switch (mode) {
             case GENERAL_SETTINGS:
                 setSettingsMode(GENERAL_SETTINGS)
@@ -57,20 +86,20 @@ const Settings = (props) => {
     );
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType): MapStateProps => {
     return {
         profile: state.profilePage.profile,
         authorizedUserId: state.auth.userId,
         profileErrors: state.settings.profileErrors,
     }
 }
-let mapDispatchToProps = {
+let mapDispatchToProps: MapDispatchProps = {
     saveProfile: saveProfileThunkCreator,
     getUserProfile: getUserProfileThunkCreator,
 }
 
 
-export default compose(
+export default compose<React.ComponentType>(
     connect(mapStateToProps, mapDispatchToProps),
     WithAuthRedirect,
 )(Settings);

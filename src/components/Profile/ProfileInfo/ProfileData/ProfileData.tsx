@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import styles from "../ProfileInfo.module.css";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import defaultAvatar from "../../../../assets/images/defaultAva.png";
+import {ContactsType, ProfileType} from "../../../../types/types";
 
-const ProfileData = (props) => {
+type PropsType = {
+    profile: ProfileType,
+    userStatus: string;
+    updateUserStatus: (newStatus: string) => void;
+    isOwner: boolean;
+    onSelectMainPhoto: (event: ChangeEvent<HTMLInputElement>) => void
+}
+
+const ProfileData: React.FC<PropsType> = (props) => {
     let printContacts = Object.keys(props.profile.contacts).map(key => {
-        return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]}/>
+        return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key as keyof ContactsType]}/>
     });
     return (
         <>
@@ -21,7 +30,7 @@ const ProfileData = (props) => {
                             <img src={defaultAvatar} alt="user\'s avatar"/>
                     }
                     {props.isOwner && <input type='file' onChange={props.onSelectMainPhoto}/>}
-
+                    {/*{!props.isOwner && <ToggleFollow />}*/}
                 </div>
                 <div className={styles.userDescription}>
 
@@ -34,7 +43,7 @@ const ProfileData = (props) => {
                     </div>
                     {
                         props.profile.lookingForAJob && <div>
-                            <b>My professional skills:</b>: {props.profile.lookingForAJobDescription}
+                            <b>My professional skills</b>: {props.profile.lookingForAJobDescription}
                         </div>
                     }
                     <br/>
@@ -46,20 +55,16 @@ const ProfileData = (props) => {
                     <br/>
                 </div>
             </div>
-            {props.isOwner && <button onClick={props.activateEditMode}>Edit</button>}
         </>
     );
 }
 
-const Contact = ({contactTitle, contactValue}) => {
+type ContactProps = {
+    contactTitle: string;
+    contactValue: string;
+}
 
-    // return (
-    //     <div>
-    //         <b className={styles.contacts}>{contactTitle}</b>: {contactValue}
-    //     </div>
-    // );
-
-    // debugger
+const Contact: React.FC<ContactProps> = ({contactTitle, contactValue}) => {
     if (contactValue && contactValue !== "") {
         return (
             <div>

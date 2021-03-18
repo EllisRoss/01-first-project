@@ -1,3 +1,5 @@
+import {InferActionTypes} from "./reduxStore";
+
 const SET_PROFILE_ERRORS = 'social-network/settings/SET_PROFILE_ERRORS';
 
 
@@ -6,7 +8,7 @@ let initialState = {
 };
 
 type  InitialStateType = typeof initialState;
-type ActionTypes = SetProfileErrorsActionType;
+type ActionTypes = InferActionTypes<typeof settingsActions>;
 const settingsReducer = (state: InitialStateType = initialState, action: ActionTypes): InitialStateType => {
     switch (action.type) {
         case SET_PROFILE_ERRORS:
@@ -24,11 +26,9 @@ const setProfileErrors = (state: InitialStateType, errors: Array<string>): Initi
     }
 }
 
-export type SetProfileErrorsActionType = {
-    type: typeof SET_PROFILE_ERRORS,
-    errors: Array<string>,
+export const settingsActions = {
+    setProfileErrors: (errors: Array<string>) => ({type: SET_PROFILE_ERRORS, errors} as const),
 }
 
-export const setProfileErrorsAC = (errors: Array<string>): SetProfileErrorsActionType => ({type: SET_PROFILE_ERRORS, errors});
 
 export default settingsReducer;

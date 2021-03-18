@@ -3,6 +3,7 @@ import defaultAva from '../../assets/images/defaultAva.png'
 import styles from './Users.module.css';
 import {NavLink} from "react-router-dom";
 import {UserType} from "../../types/types";
+import ToggleFollow from "./ToggleFollow/ToggleFollow";
 
 
 type PropsType = {
@@ -30,15 +31,7 @@ const User: React.FC<PropsType> = ({user, followingInProgress, unfollow, follow}
                 </NavLink>
             </div>
             <div className={styles.followButton}>
-                {
-                    user.followed
-                        ? <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
-                            unfollow(user.id)
-                        }}>Unfollow</button>
-                        : <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
-                            follow(user.id)
-                        }}>Follow</button>
-                }
+                <ToggleFollow follow={follow} unfollow={unfollow} followingInProgress={followingInProgress} user={user} />
             </div>
         </div>
     );

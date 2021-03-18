@@ -1,7 +1,12 @@
 import React from "react";
 import style from './Post.module.css';
 
-const Post = (props) => {
+type Props = {
+    likeCount: number
+    message: string
+}
+
+const Post: React.FC<Props> = (props) => {
     return (
         <div>
             <div className={style.item}>
@@ -11,7 +16,6 @@ const Post = (props) => {
                 {props.message}
                 <div>
                     <span className={style.itemLike}>{props.likeCount} like </span>
-                    <span className={style.itemDislike}>{props.dislikeCount} dislike </span>
                 </div>
             </div>
         </div>

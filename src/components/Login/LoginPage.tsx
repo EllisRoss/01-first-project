@@ -2,8 +2,8 @@ import React from "react";
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {Input} from "../common/FormsControls/FormsControls";
 import {maxLengthCreator, requiredField} from "../../utils/validators/validators";
-import {connect} from "react-redux";
-import {loginThunkCreator, logoutThunkCreator} from "../../redux/authReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {loginThunkCreator} from "../../redux/authReducer";
 import {Redirect} from "react-router-dom";
 import styles from "../common/FormsControls/FormControls.module.css";
 import {AppStateType} from "../../redux/reduxStore";
@@ -58,15 +58,6 @@ const LoginReduxForm = reduxForm<LoginFormValuesType, LoginFormOwnPropsType>({
     form: 'login',
 })(LoginForm)
 
-type MapStatePropsType = {
-    captchaUrl: string | null
-    isAuth: boolean
-}
-type MapDispatchPropsType = {
-    login: (email: string, password: string, rememberMe: boolean, captcha: string | null) => void,
-    logout: () => void,
-
-}
 type LoginFormValuesType = {
     email: string,
     password: string,
@@ -74,34 +65,25 @@ type LoginFormValuesType = {
     captcha: string
 }
 
-const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
+export const LoginPage: React.FC = React.memo((props) => {
+    const captchaUrl = useSelector((state: AppStateType) => state.auth.captchaUrl);
+    const isAuth = useSelector((state: AppStateType) => state.auth.isAuth);
+
+    const dispatch = useDispatch();
+
     const onSubmit = (formData: LoginFormValuesType) => {
         let {email, password, rememberMe, captcha} = formData;
-        props.login(email, password, rememberMe, captcha);
+        dispatch(loginThunkCreator(email, password, rememberMe, captcha));
     }
 
-    if (props.isAuth) {
+    if (isAuth) {
         return <Redirect to='/profile'/>
     }
 
     return (
         <div>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={captchaUrl}/>
         </div>
     );
-}
-
-let mapDispatchToProps: MapDispatchPropsType = {
-    login: loginThunkCreator,
-    logout: logoutThunkCreator,
-}
-
-let mapStateToProps = (state: AppStateType): MapStatePropsType => {
-    return {
-        isAuth: state.auth.isAuth,
-        captchaUrl: state.auth.captchaUrl,
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+});

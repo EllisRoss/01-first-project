@@ -12,10 +12,7 @@ const ProfileSettingsForm = (props) => {
                 lookingForAJobDescription: props.profile.lookingForAJobDescription,
                 contacts: props.profile.contacts,
             }}
-            // validate={values => {
-            //     const errors = {};
-            //     return errors;
-            // }}
+
             onSubmit={(values, {setSubmitting}) => {
                 console.log(values);
                 props.saveProfile(values);
@@ -65,10 +62,6 @@ const ProfileSettingsForm = (props) => {
                     <button type="submit" disabled={isSubmitting}>
                         Save
                     </button>
-                    <label> </label>
-                    {/*<button type="cancel" onClick={props.deactivateEditMode}>*/}
-                    {/*    Cancel*/}
-                    {/*</button>*/}
                 </Form>
             )}
         </Formik>

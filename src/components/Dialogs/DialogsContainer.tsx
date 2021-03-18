@@ -1,5 +1,5 @@
 import React from 'react';
-import {DialogType, MessageType, sendMessageAC} from "../../redux/dialogsReducer";
+import {DialogsActions, DialogType, MessageType} from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
@@ -23,10 +23,10 @@ type MapDispatchPropsType = {
     sendMessage: (newMessage: string) => void
 }
 let mapDispatchToProps: MapDispatchPropsType = {
-    sendMessage: sendMessageAC,
+    sendMessage: DialogsActions.sendMessage,
 };
 
-const DialogsContainer = compose(
+const DialogsContainer = compose<React.ComponentType>(
     connect(mapStateToProps, mapDispatchToProps),
     WithAuthRedirect,
 )(Dialogs);
