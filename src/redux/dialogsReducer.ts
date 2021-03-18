@@ -2,13 +2,13 @@ import defaultAva from './../assets/images/defaultAva.png'
 
 const SEND_MESSAGE = 'social-network/dialogs/SEND_MESSAGE'
 
-type DialogType = {
+export type DialogType = {
     id: number,
     name: string,
     avatar: string,
 }
 
-type MessageType = {
+export type MessageType = {
     id: number,
     message: string,
 }

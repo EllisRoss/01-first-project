@@ -2,8 +2,13 @@ import React from "react";
 import styles from './Header.module.css'
 import {NavLink} from "react-router-dom";
 
+type HeaderPropsType = {
+    isAuth: boolean,
+    login: string,
+    logout: () => void,
+}
 
-const Header = (props) => {
+const Header: React.FC<HeaderPropsType> = (props) => {
     return (
         <header className={styles.header}>
             <img src='https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg'

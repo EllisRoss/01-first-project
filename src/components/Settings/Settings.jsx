@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
+import Preloader from "../common/Preloader/Preloader";
 
 const GENERAL_SETTINGS = 'GENERAL_SETTINGS';
 const PROFILE_SETTINGS = 'PROFILE_SETTINGS';
@@ -51,7 +52,7 @@ const Settings = (props) => {
             <label> </label>
             <button onClick={() => toggleSettings(PROFILE_SETTINGS)}>Profile</button>
 
-            { showSettings() }
+            { props.profile ? showSettings() : <Preloader /> }
         </div>
     );
 }
