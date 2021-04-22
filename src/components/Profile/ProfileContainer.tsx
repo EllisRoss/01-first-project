@@ -3,14 +3,15 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {
     getUserProfileThunkCreator,
-    getUserStatusThunkCreator, setUserAvatarThunkCreator,
+    getUserStatusThunkCreator,
+    setUserAvatarThunkCreator,
     updateUserStatusThunkCreator
 } from "../../redux/profileReducer";
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
 import {AppStateType} from "../../redux/reduxStore";
-import {PhotosType, ProfileType} from "../../types/types";
+import {ProfileType} from "../../types/types";
 
 type MapState = {
     profile: ProfileType;
@@ -49,11 +50,12 @@ class ProfileContainer extends React.Component<PropsType> {
         this.refreshProfile();
     }
 
-    componentDidUpdate(prevProps: PropsType,prevState: PropsType) {
+    componentDidUpdate(prevProps: PropsType, prevState: PropsType) {
         if (this.props.match.params.userId !== prevProps.match.params.userId) {
             this.refreshProfile();
         }
     }
+
     render() {
         return (
             <>
@@ -61,7 +63,7 @@ class ProfileContainer extends React.Component<PropsType> {
                          userStatus={this.props.userStatus}
                          updateUserStatus={this.props.updateUserStatus}
                          isOwner={!this.props.match.params.userId}
-                         setUserAvatar={this.props.setUserAvatar} />
+                         setUserAvatar={this.props.setUserAvatar}/>
             </>
         );
     };
